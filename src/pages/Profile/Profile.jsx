@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 function Profile() {
     const [userData, setUserData] = useState(null);
@@ -24,6 +25,10 @@ function Profile() {
 
     return (
         <div>
+            <Header />
+            <svg height="100" width="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg> 
             {userData && (
                 <div>
                     <img src={userData.profileImage} alt="Profile" />
