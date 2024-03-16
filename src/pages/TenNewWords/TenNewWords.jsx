@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import LanguageSelector from '../../components/LanguageSelector/LanguageSelector';
 import Header from '../../components/Header/Header';
-import MainTop from '../../components/MainTop/MainTop';
+import AddVocabForm from '../../components/AddVocabForm/AddVocabForm';
 import WordGenerator from '../../components/WordGenerator/WordGenerator';
 
 function Home() {
@@ -35,8 +35,8 @@ function Home() {
         <div>
             <Header name ={userName} />
             <LanguageSelector setLanguage={handleLanguageChange} />
-            {/* <MainTop /> */}
-            <WordGenerator language={selectedLanguage} /> 
+            <AddVocabForm selectedLanguage={selectedLanguage} />
+            <WordGenerator language={selectedLanguage} userData={userName}/> 
         </div>
     );
 }

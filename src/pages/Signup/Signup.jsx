@@ -30,6 +30,7 @@ function Signup() {
         navigate("/");
       } catch (err) {
         console.error(err);
+        alert("Error signing up, there may be another user with the same credentials");
       }
     }
   };
