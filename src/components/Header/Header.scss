@@ -1,0 +1,37 @@
+@import '../../styles/fonts';
+@import '../../styles/global';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $background-dark;
+    padding: 1rem;
+    width: 30vw;
+    height: 100vh;
+    
+    .logo {
+        img {
+            width: calc(100% - 1rem);
+            height: auto;
+        }
+    }
+    &__menu {
+        display: flex;
+        flex-direction: row-reverse;
+        a {
+            color: $primary-white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+    }
+    .profile {
+        border-bottom: $background-light solid 1px;
+        img {
+            width: 40px;
+            height: auto;
+        }
+    }
+}

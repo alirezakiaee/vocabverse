@@ -1,51 +1,8 @@
-.home-container {
-    display: flex;
-    height: 100vh;
-  
-    .sidebar {
-      width: 25%;
-      background-color: #f0f0f0;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow-y: auto;
-  
-      button {
-        margin-bottom: 20px;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #0056b3;
-        }
-      }
-  
-      .board-item {
-        padding: 10px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #e8e8e8;
-        }
-      }
-    }
-  
-    .board-area {
-      width: 75%;
-      background-color: #e8e8e8;
-      padding: 20px;
-      box-sizing: border-box;
-  
-      .board-content {
-        h2 {
-          margin-top: 0;
-        }
-        // Add more styles for your board content here
-      }
-    }
-  }
-  
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}

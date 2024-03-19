@@ -29,7 +29,10 @@ function WordGenerator({ language, userData }) {
   }, [language]);
 
   const handleAdd = async () => {
-    if (words.length === 0 || !userData) {console.log("No user data"); return;};
+    if (words.length === 0 || !userData) {
+      console.log("No user data");
+      return;
+    }
 
     const vocabDataArray = words.map((word) => {
       const parts = word.split(": ");
@@ -38,8 +41,12 @@ function WordGenerator({ language, userData }) {
 
       const currentTime = new Date();
       const mysqlFormat = currentTime.toISOString().replace(/T|Z/g, " ");
-      const nextReviewTime = new Date(currentTime.getTime() + 24 * 60 * 60 * 1000);
-      const nextReviewMysqlFormat = nextReviewTime.toISOString().replace(/T|Z/g, " ");
+      const nextReviewTime = new Date(
+        currentTime.getTime() + 24 * 60 * 60 * 1000
+      );
+      const nextReviewMysqlFormat = nextReviewTime
+        .toISOString()
+        .replace(/T|Z/g, " ");
 
       return {
         // user_id: userData.id,
@@ -56,13 +63,17 @@ function WordGenerator({ language, userData }) {
 
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.post("http://localhost:3001/add-vocab-array", {
-        words: vocabDataArray,
-      }, {
-        headers: {
-          Authorization: token ? `Bearer ${token}` : "",
+      const response = await axios.post(
+        "http://localhost:3001/add-vocab-array",
+        {
+          words: vocabDataArray,
         },
-      });
+        {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : "",
+          },
+        }
+      );
 
       console.log(response.data);
       setWords([]);
@@ -71,13 +82,9 @@ function WordGenerator({ language, userData }) {
       console.error("Error adding vocab:", error);
     }
   };
-  
-  
-  
 
   return (
     <div>
-      
       <button onClick={generateWords}>I want AI to show me words!</button>
       {words.map((word, index) => {
         const parts = word.split(": ");
@@ -86,15 +93,15 @@ function WordGenerator({ language, userData }) {
 
         return (
           console.log(numberAndWord),
-          <div key={index}>
-            <h3>{numberAndWord}</h3>
-            <p>{meaning}</p>
-          </div>
+          (
+            <div key={index}>
+              <h3>{numberAndWord}</h3>
+              <p>{meaning}</p>
+            </div>
+          )
         );
       })}
-      {showButton && (
-        <button onClick={handleAdd}>Let's learn em!</button>
-      )}
+      {showButton && <button onClick={handleAdd}>Let's learn em!</button>}
     </div>
   );
 }
