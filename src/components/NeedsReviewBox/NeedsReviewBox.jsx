@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './NeedsReviewBox.scss';
 
 const NeedsReviewBox = ({ box_id }) => {
   const [vocabList, setVocabList] = useState([]);
@@ -38,7 +39,7 @@ const NeedsReviewBox = ({ box_id }) => {
   };
 
   return (
-    <div>
+    <div className="needs-review-box">
       <h2>Vocabularies Needing Review</h2>
       <table>
         <thead>

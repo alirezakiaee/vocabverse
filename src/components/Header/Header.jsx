@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Header.scss";
-import logo from "../../assets/Logo/vocabverse-logo.png";
+import logo from "../../assets/Logo/vocabverse-logo-white.png";
 import profileImage from "../../assets/Icons/profile.png";
+import dashboard_image from "../../assets/Icons/vocabverse-logo-white-sqr.png";
 
 const Header = (props) => {
   const [userData, setUserData] = useState(null);
@@ -37,7 +38,10 @@ const Header = (props) => {
         <div className="logo">
           <img src={logo} alt="home" />
         </div>
-        <h2>Dashboard</h2>
+        <div className="dashboard_icon">
+          <img src={dashboard_image} alt="profile" />
+          <h2>Dashboard</h2>
+        </div>
         <div className="profile">
           <div>
             <Link to="/profile">

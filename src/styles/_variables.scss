@@ -7,7 +7,8 @@ $desktop-breakpoint: 1280px;
 // DESKTOP screen sizes are defined at 1280px, but are applied to screen sizes 1280px and greater.
 
 
-$primary-dark: #13182c; // Instock-Black - Global text color
+$primary-dark: #13182c;
+$primary-purple: #754ABC; // Instock-Black - Global text color
 $primary-blue: #2e66e5; // Instock-Indigo - Interactive elements
 $primary-white: #ffffff; //White - Global white color
 $secondary-dark: #5c667e;  // Slate - Table column headers & placeholder text
@@ -15,4 +16,6 @@ $secondary-light: #bdc5d5; // Cloud - Outlines, dividers, borders, table sorting
 $background-dark: #232940; // Graphite - Top navigation header background, CTA button hover state background
 $background-light: #f7f8f9;  // Light-Grey - Page background, table column header background, CTA background
 $supporting-color1: #158463; // Green - "In Stock" label
-$supporting-color2: #c94515; // Red - "Out of Stock" label, error states & delete icon
+$supporting-color2: #c94515;
+$background_gradient1: #6e8fe9; // Red - "Out of Stock" label, error states & delete icon
+$background_gradient2: #b876f1; // Red - "Out of Stock" label, error states & delete icon

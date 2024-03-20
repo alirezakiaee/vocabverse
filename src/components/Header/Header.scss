@@ -1,37 +1,50 @@
-@import '../../styles/fonts';
-@import '../../styles/global';
-@import '../../styles/mixins';
-@import '../../styles/variables';
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: $background-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-image: linear-gradient(to bottom,$background_gradient1 ,$background_gradient2); 
+  padding: 1rem;
+  width: 30vw;
+  height: 100vh;
+
+  .logo {
+    img {
+      width: calc(100% - 1rem);
+      height: auto;
+    }
+  }
+  .dashboard_icon {
+    background-color: $primary-purple;
     padding: 1rem;
-    width: 30vw;
-    height: 100vh;
-    
-    .logo {
-        img {
-            width: calc(100% - 1rem);
-            height: auto;
-        }
+    display: flex;
+    border-radius: 1rem;
+    align-items: center;
+    img {
+      width: 40px;
+      height: auto;
+      margin-right: 1rem;
     }
-    &__menu {
-        display: flex;
-        flex-direction: row-reverse;
-        a {
-            color: $primary-white;
-            text-decoration: none;
-            margin-left: 1rem;
-        }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row-reverse;
+    a {
+      color: $primary-white;
+      text-decoration: none;
+      margin-left: 1rem;
     }
-    .profile {
-        border-bottom: $background-light solid 1px;
-        img {
-            width: 40px;
-            height: auto;
-        }
+  }
+  .profile {
+    border-bottom: $background-light solid 1px;
+    img {
+      width: 40px;
+      height: auto;
     }
+  }
 }
