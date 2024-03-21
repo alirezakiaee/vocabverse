@@ -1,0 +1,27 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.word-generation {
+    display: flex;
+    flex-grow: 1;
+    background-color: $background-light;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-height: 0;
+        .inner-bottom {
+            display: flex;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .inner-top {
+            display: flex;
+            margin-top: 20px;
+            width: 50%
+        }
+    }  
+}
+

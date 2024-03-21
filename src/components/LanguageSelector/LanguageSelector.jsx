@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LanguageSelector.scss';
 
 function LanguageSelector({ setLanguage }) {
     const [selectedLanguage, setSelectedLanguage] = useState('');
@@ -11,12 +12,13 @@ function LanguageSelector({ setLanguage }) {
     };
 
     return (
-        <div>
-            <label htmlFor="learningLanguage">You are learning:</label>
+        <div className="language-selector">
+            <label htmlFor="learningLanguage" className="selector-label">You are learning:</label>
             <select
                 id="learningLanguage"
                 value={selectedLanguage}
                 onChange={handleLanguageChange}
+                className="selector-select"
             >
                 <option value="">Select a language</option>
                 <option value="German">German</option>

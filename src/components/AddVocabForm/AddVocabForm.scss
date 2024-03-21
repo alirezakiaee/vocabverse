@@ -1,0 +1,55 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.add-vocab-form {
+    width: 50%;
+    height: auto;
+    margin: 1rem 2rem auto;
+
+    .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-input, .form-textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid ;
+        border-radius: 5px;
+    }
+
+    .form-textarea {
+        resize: vertical;
+    }
+
+    .form-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        .resetButton {
+            background-color: #f44336;
+        }
+        &:hover {
+            background-color: #45a049;
+            animation: grow 0.3s ease forwards;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

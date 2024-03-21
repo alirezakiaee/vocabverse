@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Headers from "../../components/Header/Header";
 import OverDue from "../../components/OverDue/OverDue";
 import './DueToday.scss';
+import moment from 'moment';
 
 const DueToday = () => {
   const [vocabsDueToday, setVocabsDueToday] = useState([]);
@@ -32,8 +33,7 @@ const DueToday = () => {
 
     fetchData();
   }, []);
-  const filterDueToday = vocabsDueToday.filter((vocab) => vocab.next_review = new Date().toISOString().slice(0, 10));
-  console.log(new Date().toISOString().slice(0, 10));
+  const filterDueToday = vocabsDueToday.filter((vocab) => moment(vocab.next_review).isSame(moment(), 'day'));
   // const sortByNextReview = [...filterDueToday, ...filterOverdue].sort((a, b) => new Date(a.next_review) - new Date(b.next_review));
   return (
     <div>

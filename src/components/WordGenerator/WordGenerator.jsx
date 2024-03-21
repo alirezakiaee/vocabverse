@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import axios from "axios";
+import './WordGenerator.scss';
 
 function WordGenerator({ language, userData }) {
   const [words, setWords] = useState([]);
@@ -84,25 +85,36 @@ function WordGenerator({ language, userData }) {
   };
 
   return (
-    <div>
-      <button onClick={generateWords}>I want AI to show me words!</button>
-      {words.map((word, index) => {
-        const parts = word.split(": ");
-        const numberAndWord = parts[0].slice(3).trim();
-        const meaning = parts[1];
+    <div className="word-generator">
+    <button className="generate-button" onClick={generateWords}>I want AI to show me words!</button>
+    {words.length > 0 && (
+      <div className="word-container">
+        <table className="word-table">
+          <thead>
+            <tr>
+              <th>Word</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {words.map((word, index) => {
+              const parts = word.split(": ");
+              const numberAndWord = parts[0].slice(3).trim();
+              const meaning = parts[1];
 
-        return (
-          console.log(numberAndWord),
-          (
-            <div key={index}>
-              <h3>{numberAndWord}</h3>
-              <p>{meaning}</p>
-            </div>
-          )
-        );
-      })}
-      {showButton && <button onClick={handleAdd}>Let's learn em!</button>}
-    </div>
+              return (
+                <tr key={index}>
+                  <td>{numberAndWord}</td>
+                  <td>{meaning}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )}
+    {showButton && <button className="learn-button" onClick={handleAdd}>Let's learn em!</button>}
+  </div>
   );
 }
 

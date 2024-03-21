@@ -1,3 +1,8 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
 .needs-review-box {
     height: 100vh;
     display: flex;

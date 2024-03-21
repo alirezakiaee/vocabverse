@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import moment from 'moment';
 const OverDue = () => {
   const [vocabsDueToday, setVocabsDueToday] = useState([]);
 
@@ -30,7 +30,7 @@ const OverDue = () => {
     fetchData();
   }, []);
   
-  const filterOverdue = vocabsDueToday.filter((vocab) => vocab.next_review <= new Date().toISOString().slice(0, 10));
+  const filterOverdue = vocabsDueToday.filter((vocab) => vocab.next_review < moment().format('YYYY-MM-DD'));
   // const sortByNextReview = [...filterDueToday, ...filterOverdue].sort((a, b) => new Date(a.next_review) - new Date(b.next_review));
   return (
     <div>

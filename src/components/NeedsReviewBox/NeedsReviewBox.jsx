@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './NeedsReviewBox.scss';
+import moment from 'moment';
 
 const NeedsReviewBox = ({ box_id }) => {
   const [vocabList, setVocabList] = useState([]);
@@ -15,7 +16,13 @@ const NeedsReviewBox = ({ box_id }) => {
             Authorization: `Bearer ${token}`,
           },
         });
-        setVocabList(response.data);
+        const updatedVocabList = response.data.map((vocab) => {
+          if (moment(vocab.next_review).isSameOrBefore(moment())) {
+            return { ...vocab, status: <span style={{ color: 'red' }}>needs review</span> };
+          }
+          return vocab;
+        });
+        setVocabList(updatedVocabList);
       } catch (error) {
         console.error('Error fetching vocab list:', error);
       }
@@ -55,7 +62,7 @@ const NeedsReviewBox = ({ box_id }) => {
             <tr key={vocab.id}>
               <td>{vocab.front}</td>
               <td>{vocab.status}</td>
-              <td>{vocab.next_review}</td>
+              <td>{moment(vocab.next_review).format('YYYY-MM-DD')}</td>
               <td>
                 <Link to={`/vocab/${box_id}/${vocab.id}`} className="review-button">
                   Review

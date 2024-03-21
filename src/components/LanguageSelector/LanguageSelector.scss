@@ -1,0 +1,23 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.language-selector {
+  width: 50%;
+  margin: 1rem 2rem auto;
+
+  .selector-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .selector-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
