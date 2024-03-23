@@ -7,6 +7,7 @@ import MainTop from "../../components/MainTop/MainTop";
 import Header from "../../components/Header/Header";
 import MainBottom from "../../components/MainBottom/MainBottom";
 import "./Home.scss";
+import ProfileTop from "../../components/ProfileTop/ProfileTop";
 
 export const Home = () => {
   const [userData, setUserData] = useState(null);
@@ -32,19 +33,14 @@ export const Home = () => {
   // Check if userData is null before accessing its properties
   const loggedInUserName = userData ? userData.name : "";
   return (
-    <div>
-      <div className="home">
-        <Header />
-        <div className="profile">
-          <div>
-            <Link to="/profile">
-              <img src={profileImage} alt="profile" />
-            </Link>
-          </div>
-          welcome{userData && <span> {loggedInUserName}</span>}
+    <div className="container-all">
+      <Header />
+      <div className="container-inner">
+        <ProfileTop nameOfUser={loggedInUserName} dataOfUser={userData}/>
+        <div className="mainHome">
+          <MainTop />
+          <MainBottom />
         </div>
-        <MainTop />
-        <MainBottom />
       </div>
     </div>
   );

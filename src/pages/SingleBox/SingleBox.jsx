@@ -31,11 +31,11 @@ const SingleBox = () => {
   }, [box_id]);
 
   return (
-    <div>
-      <div className="review-box">
+    <div className="container-all">
       <Header />
-        <h2>{boxName ? boxName : "Loading..."}</h2>
-        <NeedsReviewBox box_id={box_id} />
+      <div className="container-inner">
+          <h2>{boxName ? boxName : "Loading..."}</h2>
+          <NeedsReviewBox box_id={box_id} />
       </div>
     </div>
   );

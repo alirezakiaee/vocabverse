@@ -34,9 +34,9 @@ function Home() {
   };
 
   return (
-    <div>
-      <div className="word-generation">
+    <div className="container-all">
         <Header name={userName} />
+      <div className="container-inner">
         <div className="word-generation__inner">
           <div className="inner-top">
             <LanguageSelector setLanguage={handleLanguageChange} />

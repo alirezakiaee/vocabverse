@@ -22,7 +22,7 @@ function App() {
         <Route path="/add-vocab" element={<AddVocabForm />} />
         <Route path="/singlebox/:box_id" element={<SingleBox />} /> 
         <Route path="/vocab/:box_id/:id" element={<SingleVocab />} />
-        <Route path="/due-today" element={<DueToday />} />
+        <Route path="/due-today/" element={<DueToday />} />
       </Routes>
     </BrowserRouter>
   );

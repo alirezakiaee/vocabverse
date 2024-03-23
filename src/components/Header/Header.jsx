@@ -5,6 +5,7 @@ import "./Header.scss";
 import logo from "../../assets/Logo/vocabverse-logo-white.png";
 import profileImage from "../../assets/Icons/profile.png";
 import dashboard_image from "../../assets/Icons/vocabverse-logo-white-sqr.png";
+import ProfileTop from "../ProfileTop/ProfileTop";
 
 const Header = (props) => {
   const [userData, setUserData] = useState(null);
@@ -43,12 +44,7 @@ const Header = (props) => {
           <h2>Dashboard</h2>
         </div>
         <div className="profile">
-          <div>
-            <Link to="/profile">
-              <img src={profileImage} alt="profile" />
-            </Link>
-          </div>
-          welcome{userData && <span> {selectedLanguage}</span>}
+          <ProfileTop nameOfUser={selectedLanguage} dataOfUser={userData} />
         </div>
         <div className="header__menu">
           <Link to="/settings">

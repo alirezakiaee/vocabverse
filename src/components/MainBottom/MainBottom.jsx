@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/MainBottom.scss';
+import './MainBottom.scss';
 
 const MainBottom = () => {
   return (
     <div>
-      <h2>Choose a Box</h2>
+      <h2>Choose a box to start reviewing</h2>
       <div className="card-container">
         <Link to="/singlebox/1" className="card">
           <h3>G1</h3>

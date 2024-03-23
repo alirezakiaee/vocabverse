@@ -49,8 +49,8 @@ const OverDue = () => {
           {filterOverdue.map((vocab) => (
             <tr key={vocab.id}>
               <td>{vocab.front}</td>
-              <td>{vocab.status}</td>
-              <td>{vocab.next_review}</td>
+              <td style={{ color: vocab.status = 'needs review' ? 'red' : 'black' }}>{moment(vocab.next_review).isBefore(moment(), 'day') ? 'Needs Review' : 'Due Today'}</td>
+              <td>{moment(vocab.next_review).format('YYYY-MM-DD')}</td>
               <td>G{vocab.box_id}</td>
               <td>
                 <Link to={`/vocab/${vocab.box_id}/${vocab.id}`} className="review-button">

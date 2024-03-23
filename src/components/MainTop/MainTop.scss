@@ -1,0 +1,36 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+.main-top {
+    display: flex;
+    margin: 2rem 0 5rem 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+    border-radius: 1rem;
+    background-color: $background_gradient3;
+
+
+    &__button {
+        background-color: $primary-purple;
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 1rem;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $background_gradient1;
+        }
+
+        img {
+            width: 4rem;
+            height: auto;
+        }
+    }
+}

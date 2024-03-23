@@ -14,12 +14,12 @@
         min-height: 0;
         .inner-bottom {
             display: flex;
+            justify-content: space-between;
             margin-top: 20px;
             width: 100%;
         }
         .inner-top {
             display: flex;
-            margin-top: 20px;
             width: 50%
         }
     }  
