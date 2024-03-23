@@ -39,6 +39,7 @@ const DueToday = () => {
   const filterDueToday = vocabsDueToday.filter((vocab) =>
     moment(vocab.next_review).isSame(moment(), "day")
   );
+  
   // const sortByNextReview = [...filterDueToday, ...filterOverdue].sort((a, b) => new Date(a.next_review) - new Date(b.next_review));
   return (
     <div className="container-all">

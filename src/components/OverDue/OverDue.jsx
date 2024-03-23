@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import moment from 'moment';
+import "./OverDue.scss";
 const OverDue = () => {
   const [vocabsDueToday, setVocabsDueToday] = useState([]);
 
@@ -35,7 +36,7 @@ const OverDue = () => {
   return (
     <div>
       <h1>Vocabularies OverDue</h1>
-      <table>
+      <table className="overdue">
         <thead>
           <tr>
             <th>Front</th>

@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import profileImage from "../../assets/Icons/profile.png";
 import { Link } from "react-router-dom";
 import MainTop from "../../components/MainTop/MainTop";
 import Header from "../../components/Header/Header";

@@ -27,14 +27,14 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.duetoday tbody {
+.overdue tbody {
   display: block;
   height: 14rem; // Set the desired fixed height here
   overflow-y: auto;
 }
 
-.duetoday thead,
-.duetoday tbody tr {
+.overdue thead,
+.overdue tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
