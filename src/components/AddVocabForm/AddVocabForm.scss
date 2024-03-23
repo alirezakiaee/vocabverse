@@ -53,3 +53,21 @@
         }
     }
 }
+
+.modal-content {
+    width: 18.75rem;
+    text-align: center;
+    background-color: $background-dark;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    button {
+        width: 5rem;
+        border: none;
+        background-color: $background_gradient1;
+        padding: 0.5rem;
+        color: $background-light;
+        border-radius: 0.3125rem;
+        font-size: 1rem;
+    }
+  }

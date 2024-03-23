@@ -1,25 +1,61 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
-}
-
-.card-container .card {
-    flex: 0 0 calc(33.33% - 20px);
-    // width: calc(33.33% - 20px);
-    padding: 20px;
-    border-radius: 50px 0;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    margin: 0 20px 20px 0;
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+.card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    width: calc(33.333% - 20px); // Subtracting 20px for the margin on both sides
+    transition: transform 0.3s ease;
+    
+    &:nth-child(1) {
+        border-radius: 0 2rem 0 2rem;
+        background-color: $background_gradient1; // Red
+    }
+    
+    &:nth-child(2) {
+        border-radius: 2rem 0 2rem 0;
+        background-color: $background_gradient3; // Green
+    }
+    
+    &:nth-child(3) {
+        border-radius: 0 2rem 0 2rem;
+        background-color: $background_gradient2; // Blue
+    }
+    &:nth-child(4) {
+        border-radius: 2rem 0 2rem 0;
+        background-color: $supporting-color1; // Blue
+    }
+    &:nth-child(5) {
+        border-radius: 0 2rem 0 2rem;
+        background-color: $supporting-color2; // Blue
+    }
+    &:nth-child(6) {
+        border-radius: 2rem 0 2rem 0;
+        background-color: $secondary-dark; // Blue
     }
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
 
-
-
+.card h3 {
+    color: $background-light;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  

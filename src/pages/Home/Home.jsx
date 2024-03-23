@@ -7,6 +7,8 @@ import Header from "../../components/Header/Header";
 import MainBottom from "../../components/MainBottom/MainBottom";
 import "./Home.scss";
 import ProfileTop from "../../components/ProfileTop/ProfileTop";
+import OverDue from "../../components/OverDue/OverDue";
+import OverDueSlider from "../../components/OverDueSlider/OverDueSlider";
 
 export const Home = () => {
   const [userData, setUserData] = useState(null);
@@ -35,10 +37,15 @@ export const Home = () => {
     <div className="container-all">
       <Header />
       <div className="container-inner">
-        <ProfileTop nameOfUser={loggedInUserName} dataOfUser={userData}/>
-        <div className="mainHome">
-          <MainTop />
-          <MainBottom />
+        <ProfileTop nameOfUser={loggedInUserName} dataOfUser={userData} />
+        <div className="mainhome-all">
+          <div className="mainHome">
+            <MainTop />
+            <MainBottom />
+          </div>
+          <div className="sidebar">
+            <OverDueSlider />
+          </div>
         </div>
       </div>
     </div>

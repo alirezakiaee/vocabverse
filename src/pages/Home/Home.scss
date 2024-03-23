@@ -1,5 +1,21 @@
+@import '../../styles/fonts';
+@import '../../styles/global';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
 .mainHome {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 50%;
 }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 2rem;
+}
+
+.mainhome-all {
+  display: flex;
+}
+

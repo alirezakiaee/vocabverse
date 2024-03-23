@@ -53,6 +53,7 @@ const DueToday = () => {
                 <th>Status</th>
                 <th>Next Review</th>
                 <th>Box</th>
+                <th>Language</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -63,6 +64,7 @@ const DueToday = () => {
                   <td style={{ color: vocab.status = "needs review" ? "red" : "black" }}>{moment(vocab.next_review).isSame(moment(), 'day') ? 'Needs Review' : 'Due Today'}</td>
                   <td>{moment(vocab.next_review).format("YYYY-MM-DD")}</td>
                   <td>G{vocab.box_id}</td>
+                  <td>{vocab.language}</td>
                   <td>
                     <Link
                       to={`/vocab/${vocab.box_id}/${vocab.id}`}
