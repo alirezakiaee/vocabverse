@@ -15,7 +15,7 @@ const OverDue = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:3001/vocabs/due-today", {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/vocabs/due-today`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

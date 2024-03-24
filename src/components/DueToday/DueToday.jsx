@@ -18,7 +18,7 @@ const DueToday = () => {
         }
 
         const response = await axios.get(
-          "http://localhost:3001/vocabs/due-today/",
+          `${process.env.REACT_APP_API_URL}/vocabs/due-today/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ const DueToday = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/send-email",
+        `${process.env.REACT_APP_API_URL}/send-email`,
         {
           name: "Vocab Reminder",
           email: "alirezakiaee91@gmail.com",

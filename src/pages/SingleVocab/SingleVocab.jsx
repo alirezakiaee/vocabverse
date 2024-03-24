@@ -26,7 +26,7 @@ const SingleVocab = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:3001/vocabs/${vocabId}`,
+          `${process.env.REACT_APP_API_URL}/vocabs/${vocabId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const SingleVocab = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:3001/vocabs/${box_id}/needs-review/${userId}`,
+          `${process.env.REACT_APP_API_URL}/vocabs/${box_id}/needs-review/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ const SingleVocab = () => {
     updatedVocab.box_id = Math.min(box_id + 1, 6);
 
     axios
-      .put(`http://localhost:3001/vocabs/${id}`, updatedVocab, {
+      .put(`${process.env.REACT_APP_API_URL}/vocabs/${id}`, updatedVocab, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -131,7 +131,7 @@ const SingleVocab = () => {
     updatedVocab.next_review = formatDateForMySQL(nextReviewDate);
 
     axios
-      .put(`http://localhost:3001/vocabs/${id}`, updatedVocab, {
+      .put(`${process.env.REACT_APP_API_URL}/vocabs/${id}`, updatedVocab, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

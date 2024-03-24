@@ -14,7 +14,7 @@ function Home() {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .get("http://localhost:3001/dashboard", {
+        .get(`${process.env.REACT_APP_API_URL}/dashboard`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -16,7 +16,7 @@ const AddVocabForm = ({ selectedLanguage }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get("http://localhost:3001/profile", {
+      axios.get(`${process.env.REACT_APP_API_URL}/profile`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -66,7 +66,7 @@ const AddVocabForm = ({ selectedLanguage }) => {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.post('http://localhost:3001/add-vocab', vocabData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/add-vocab`, vocabData, {
         headers: {
           Authorization: token ? `Bearer ${token}` : ''
         }

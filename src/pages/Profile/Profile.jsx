@@ -11,7 +11,7 @@ function Profile() {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .get("http://localhost:3001/profile", {
+        .get(`${process.env.REACT_APP_API_URL}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

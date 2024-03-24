@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get("http://localhost:3001/profile", {
+      axios.get(`${process.env.REACT_APP_API_URL}/profile`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

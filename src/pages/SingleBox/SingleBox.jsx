@@ -14,7 +14,7 @@ const SingleBox = () => {
       try {
         const token = localStorage.getItem("token"); // Retrieve JWT token from local storage
         const response = await axios.get(
-          `http://localhost:3001/boxes/${box_id}`,
+          `${process.env.REACT_APP_API_URL}/boxes/${box_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include JWT token in request headers

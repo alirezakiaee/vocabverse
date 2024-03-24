@@ -28,7 +28,7 @@ function Signup() {
     
     if (hasNoErrors) {
       try {
-        await axios.post("http://localhost:3001/signup", values);
+        await axios.post(`${process.env.REACT_APP_API_URL}/signup`, values);
         navigate("/");
       } catch (err) {
         console.error(err);

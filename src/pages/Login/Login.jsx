@@ -23,7 +23,7 @@ function Login() {
     setErrors(validationErrors);
     if (Object.values(validationErrors).every(v => v === "")) {
       try {
-        const response = await axios.post("http://localhost:3001/login", credentials);
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, credentials);
         console.log(response.data);
         if (response.data.token) {
           localStorage.setItem('token',response.data.token)

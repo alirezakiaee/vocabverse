@@ -74,7 +74,7 @@ function WordGenerator({ language, userData }) {
     
     try {
       const response = await axios.post(
-        "http://localhost:3001/add-vocab-array",
+        `${process.env.REACT_APP_API_URL}/add-vocab-array`,
         { words: vocabDataArray },
         { headers: getHeaders() }
         );
@@ -96,7 +96,7 @@ function WordGenerator({ language, userData }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/gpt-call",
+        `${process.env.REACT_APP_API_URL}/gpt-call`,
         { language },
         { headers: getHeaders() }
       );
