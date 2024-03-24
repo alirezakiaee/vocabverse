@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Signup.scss";
+import Logo from "../../assets/Logo/vocabverse-logo.png";
 import SignupValidation from "../SignupValidation/SignupValidation";
 
 function Signup() {
@@ -36,8 +38,9 @@ function Signup() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
+    <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="bg-white p-3 rounded" style={{ width: '25%' }}>
+        <div className="logosignup"><img src={Logo} alt="" /></div>
         <form onSubmit={handleSubmit}>
           {Object.entries(values).map(([key, value]) => (
             <div key={key} className="mb-3">

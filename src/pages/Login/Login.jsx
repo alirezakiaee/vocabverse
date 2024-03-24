@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LoginValidation from '../LoginValidation/LoginValidation';
+import "./Login.scss";
+import Logo from "../../assets/Logo/vocabverse-logo.png";
 import axios from "axios";
 
 function Login() {
@@ -36,8 +38,9 @@ function Login() {
   }, [credentials, navigate]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
+    <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="bg-white p-3 rounded" style={{ width: '25%' }}>
+        <div className="loginLogo"><img src={Logo} alt="" /></div>
         <form onSubmit={handleSubmit}>
           {Object.entries(credentials).map(([key, _]) => (
             <div key={key} className="mb-3">

@@ -1,3 +1,7 @@
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
 h1 {
   text-align: center;
   margin-bottom: 2rem;
@@ -51,5 +55,18 @@ tr:nth-child(even) {
 
   &:hover {
     background-color: #45a049;
+  }
+}
+
+.sendEmail {
+  background-color: $background_gradient2;
+  color: $background-light;
+  border: none;
+  width: 10rem;
+  height: 5rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($background_gradient2, 10%);
   }
 }
