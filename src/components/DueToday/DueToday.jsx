@@ -151,7 +151,7 @@ const DueToday = () => {
               <tr key={vocab.id}>
                 <td>{vocab.front}</td>
                 <td style={{ color: vocab.status = 'needs review' ? 'red' : 'black' }}>{moment(vocab.next_review).isBefore(moment(), 'day') ? 'Needs Review' : 'Due Today'}</td>
-                <td>{moment(vocab.next_review).format('YYYY-MM-DD')}</td>
+                <td>{moment(vocab.next_review).format('YYYY-MM-DD').toLocaleLowerCase()}</td>
                 <td>G{vocab.box_id}</td>
                 <td>{vocab.language}</td>
                 <td>

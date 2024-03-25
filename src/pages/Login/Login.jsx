@@ -16,13 +16,14 @@ function Login() {
   const handleInputChange = useCallback(({ target: { name, value } }) => {
     setCredentials(prev => ({ ...prev, [name]: value }));
   }, []);
-
+  
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
     const validationErrors = LoginValidation(credentials);
     setErrors(validationErrors);
     if (Object.values(validationErrors).every(v => v === "")) {
       try {
+        console.log(process.env.REACT_APP_API_URL);
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, credentials);
         console.log(response.data);
         if (response.data.token) {
