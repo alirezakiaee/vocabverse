@@ -126,8 +126,7 @@ const SingleVocab = () => {
     updatedVocab.reviewed_at = formatDateForMySQL(new Date());
     updatedVocab.status = "needs review";
     updatedVocab.box_id = 1;
-    const nextReviewDate = new Date(updatedVocab.next_review);
-    nextReviewDate.setDate(nextReviewDate.getDate() + 1);
+    const nextReviewDate = moment().format("YYYY-MM-DD");
     updatedVocab.next_review = formatDateForMySQL(nextReviewDate);
 
     axios

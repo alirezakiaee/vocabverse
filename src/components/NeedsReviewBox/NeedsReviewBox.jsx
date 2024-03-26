@@ -45,7 +45,6 @@ const NeedsReviewBox = ({ box_id }) => {
       console.error('Error deleting vocabulary:', error);
     }
   };
-
   return (
     <div className="needs-review-box">
       <h2>Vocabularies Needing Review</h2>
