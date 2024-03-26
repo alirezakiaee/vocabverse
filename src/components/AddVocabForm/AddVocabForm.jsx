@@ -51,7 +51,7 @@ const AddVocabForm = ({ selectedLanguage }) => {
       return;
     }
 
-    const currentTime = moment().local().format('YYYY-MM-DD HH:mm:ss');
+    const currentTime = moment.tz(moment.tz.guess()).format('YYYY-MM-DD HH:mm:ss');
     debugger;
     const vocabData = {
       user_id: userData.id,
